@@ -3,12 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test",
+    "test-visible": "npx playwright test --ui",
+    "show-report": "npx playwright show-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "^9.9.1",
     "@playwright/test": "^1.46.1",
-    "@types/node": "^22.5.1"
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^22.5.1",
+    "eslint": "^9.9.1",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.3.0"
   }
 }
