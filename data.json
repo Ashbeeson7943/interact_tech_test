@@ -2,8 +2,9 @@
     "username": "qa-test-6",
     "password": "qt6",
     "blog": {
-        "summary": "What is Playwright?",
+        "title": "What is Playwright?",
+        "summary": "An Overview of Playwright",
         "content": "Playwright is an open-source framework developed by Microsoft that enables reliable end-to-end testing for web applications. It allows developers and testers to automate interactions with a web browser, such as clicking buttons, filling out forms, navigating between pages, and more. Unlike other testing tools, Playwright is designed to support multiple browser contexts, making it ideal for cross-browser testing.",
-        "img_path": "./blog_ig.png"
+        "img_path": "./../blog_ig.png"
     }
 }

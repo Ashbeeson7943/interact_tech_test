@@ -17,8 +17,8 @@ export class Login {
 
     async login(test_data: DataJson) {
         await expect(this.username_input).toBeVisible();
-        await this.username_input.fill(test_data.username, { timeout: 1000 })
-        await this.password_input.fill(test_data.password, { timeout: 5000 })
-        await this.login_button.click()
+        await this.username_input.fill(test_data.username);
+        await this.password_input.fill(test_data.password);
+        await this.login_button.click();
     }
 }
