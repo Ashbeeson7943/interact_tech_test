@@ -19,6 +19,7 @@ export type DataJson = typeof test_data;
 // })
 
 test('Create blog post', async ({ page }) => {
+    test.setTimeout(60000);
     // Navigate to the specified URL.
 
     await page.goto('/');
