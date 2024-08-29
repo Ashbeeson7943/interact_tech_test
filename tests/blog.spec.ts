@@ -33,6 +33,7 @@ test('Create blog post', async ({ page }) => {
     // Navigate to the profile menu and select "Add Blog Post."
 
     const home_page = new Home(page);
+    expect(await page.title()).toEqual('Home Page - Interact');
     await home_page.open_settings();
 
     const user_settings = new User_settings(page);
@@ -42,6 +43,7 @@ test('Create blog post', async ({ page }) => {
     // Fill in the blog post form with the required text and image.
 
     const new_blog_page = new Create_blog(page);
+    expect(await page.title()).toEqual('Interact Blog - Interact');
     await new_blog_page.input_blog_post_details(test_data);
 
     // Click “Continue” to submit the blog post.
@@ -54,15 +56,18 @@ test('Create blog post', async ({ page }) => {
     // Navigate to “All Posts” and validate that the blog post exists.
 
     let blog_page = new Blog(page);
+    expect(await page.title()).toEqual('Interact Blog - Interact');
     await blog_page.view_all_posts();
     await page.waitForLoadState("domcontentloaded", { timeout: 10000 });
 
     // Verify the content of the blog post matches the input data.
     const blog_list = new Blog_list(page);
+    expect(await page.title()).toEqual('People Directory - Interact');
     await blog_list.select_blog_post(test_data.blog.title);
     await page.waitForLoadState("domcontentloaded", { timeout: 10000 });
 
     blog_page = new Blog(page);
+    expect(await page.title()).toEqual('Interact Blog - Interact');
     await blog_page.get_blog_info(test_data);
 
 })

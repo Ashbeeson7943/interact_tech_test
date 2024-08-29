@@ -134,3 +134,4 @@ dist
 /playwright/.cache/
 
 details.txt
+data.json
