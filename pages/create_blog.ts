@@ -49,6 +49,7 @@ export class Create_blog {
         if (await this.page.getByText('Please add some content to your blog post').isVisible()) {
             await this.post_content_input.fill(test_data.blog.content);
             await this.post_content_input.press('Enter');
+            await this.save_post(false);
         }
     }
 

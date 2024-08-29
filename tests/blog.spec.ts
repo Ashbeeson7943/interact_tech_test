@@ -10,16 +10,15 @@ import { Blog_list } from '../pages/blog_list';
 export type DataJson = typeof test_data;
 
 
-test.afterEach(async ({ page }) => {
-    const blog_page = new Blog(page);
-    await blog_page.view_all_posts();
-    await page.waitForLoadState("domcontentloaded", { timeout: 10000 });
-    const blog_list = new Blog_list(page);
-    await blog_list.delete_blog_post(test_data.blog.title);
-})
+// test.afterEach(async ({ page }) => {
+//     const blog_page = new Blog(page);
+//     await blog_page.view_all_posts();
+//     await page.waitForLoadState("domcontentloaded", { timeout: 10000 });
+//     const blog_list = new Blog_list(page);
+//     await blog_list.delete_blog_post(test_data.blog.title);
+// })
 
 test('Create blog post', async ({ page }) => {
-    // test.setTimeout(60000);
     // Navigate to the specified URL.
 
     await page.goto('/');
@@ -49,7 +48,6 @@ test('Create blog post', async ({ page }) => {
 
     await new_blog_page.save_post();
     await new_blog_page.handle_error(test_data);
-    await new_blog_page.save_post(false);
     await page.waitForLoadState("domcontentloaded", { timeout: 10000 });
 
     // Navigate to “All Posts” and validate that the blog post exists.

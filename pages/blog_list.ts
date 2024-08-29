@@ -8,7 +8,7 @@ export class Blog_list {
     constructor(page: Page) {
         this.page = page;
         this.blog_list = page.locator('#person-blog-results');
-        this.blog_list = page.locator('#person-blog-results div.dropdown');
+        this.blog_options = page.locator('#person-blog-results div.dropdown');
 
     }
 
@@ -17,7 +17,7 @@ export class Blog_list {
     }
 
     async delete_blog_post(blog_title: string) {
-        await this.blog_options.click();
+        await this.blog_options.first().click();
         this.page.on('dialog', dialog => dialog.accept());
         await this.blog_list.getByText('Delete Post').click();
     }
